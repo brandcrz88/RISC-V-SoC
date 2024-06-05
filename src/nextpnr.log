@@ -1,0 +1,487 @@
+Info: constrained 'CLK' to bel 'X12/Y31/io1'
+Info: constrained 'TX' to bel 'X15/Y0/io0'
+Info: constrained 'BTN_N' to bel 'X16/Y0/io0'
+Info: constrained 'LED1' to bel 'X18/Y31/io0'
+Info: constrained 'LED2' to bel 'X18/Y31/io1'
+Info: constrained 'LED3' to bel 'X19/Y31/io1'
+Info: constrained 'LED4' to bel 'X19/Y31/io0'
+Info: constrained 'LED5' to bel 'X18/Y0/io1'
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:      863 LCs used as LUT4 only
+Info:      131 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:      110 LCs used as DFF only
+Info: Packing carries..
+Info:       10 LCs used as CARRY only
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info:   constrained PLL 'my_pll.pll_inst' to X12/Y31/pll_3
+Info: Packing special functions..
+Info:   PLL 'my_pll.pll_inst' has LOCK output, need to pass all outputs via LUT
+Info:   constrained 'my_pll.locked_SB_LUT4_I3_LC' to X1/Y30/lc0
+Info: Promoting globals..
+Info: promoting BTN_N_SB_LUT4_I3_O [reset] (fanout 53)
+Info: promoting my_pll.locked_SB_LUT4_I3_O[0] [reset] (fanout 34)
+Info: promoting D_mem_unit.mem_rstrb_SB_LUT4_O_I2_SB_LUT4_I0_O [reset] (fanout 32)
+Info: promoting processor.state_SB_LUT4_I0_O [cen] (fanout 37)
+Info: promoting processor.PC_SB_DFFESR_Q_E [cen] (fanout 30)
+Info: promoting processor.state_SB_LUT4_I3_O [cen] (fanout 30)
+Info: Constraining chains...
+Info:        9 LCs used to legalise carry chains.
+Info: Checksum: 0x5da1af1b
+
+Info: Annotating ports with timing budgets for target frequency 20.00 MHz
+Info: Checksum: 0x5a83de78
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:  1125/ 5280    21%
+Info: 	        ICESTORM_RAM:    12/   30    40%
+Info: 	               SB_IO:     8/   96     8%
+Info: 	               SB_GB:     7/    8    87%
+Info: 	        ICESTORM_PLL:     1/    1   100%
+Info: 	         SB_WARMBOOT:     0/    1     0%
+Info: 	        ICESTORM_DSP:     0/    8     0%
+Info: 	      ICESTORM_HFOSC:     0/    1     0%
+Info: 	      ICESTORM_LFOSC:     0/    1     0%
+Info: 	              SB_I2C:     0/    2     0%
+Info: 	              SB_SPI:     0/    2     0%
+Info: 	              IO_I3C:     0/    2     0%
+Info: 	         SB_LEDDA_IP:     0/    1     0%
+Info: 	         SB_RGBA_DRV:     0/    1     0%
+Info: 	      ICESTORM_SPRAM:     0/    4     0%
+
+Info: Placed 11 cells based on constraints.
+Info: Creating initial analytic placement for 941 cells, random placement wirelen = 28414.
+Info:     at initial placer iter 0, wirelen = 667
+Info:     at initial placer iter 1, wirelen = 496
+Info:     at initial placer iter 2, wirelen = 551
+Info:     at initial placer iter 3, wirelen = 499
+Info: Running main analytical placer.
+Info:     at iteration #1, type ALL: wirelen solved = 505, spread = 9099, legal = 9610; time = 0.03s
+Info:     at iteration #2, type ALL: wirelen solved = 775, spread = 7684, legal = 8324; time = 0.05s
+Info:     at iteration #3, type ALL: wirelen solved = 806, spread = 7439, legal = 8323; time = 0.02s
+Info:     at iteration #4, type ALL: wirelen solved = 859, spread = 7296, legal = 8036; time = 0.02s
+Info:     at iteration #5, type ALL: wirelen solved = 1140, spread = 7079, legal = 8003; time = 0.02s
+Info:     at iteration #6, type ALL: wirelen solved = 1300, spread = 7832, legal = 8695; time = 0.02s
+Info:     at iteration #7, type ALL: wirelen solved = 1212, spread = 8094, legal = 8655; time = 0.02s
+Info:     at iteration #8, type ALL: wirelen solved = 1288, spread = 8881, legal = 9131; time = 0.02s
+Info:     at iteration #9, type ALL: wirelen solved = 1427, spread = 8841, legal = 9460; time = 0.02s
+Info:     at iteration #10, type ALL: wirelen solved = 1523, spread = 9185, legal = 9579; time = 0.02s
+Info: HeAP Placer Time: 0.40s
+Info:   of which solving equations: 0.21s
+Info:   of which spreading cells: 0.02s
+Info:   of which strict legalisation: 0.03s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 1141, wirelen = 8003
+Info:   at iteration #5: temp = 0.000000, timing cost = 1046, wirelen = 6598
+Info:   at iteration #10: temp = 0.000000, timing cost = 1005, wirelen = 6256
+Info:   at iteration #15: temp = 0.000000, timing cost = 938, wirelen = 6099
+Info:   at iteration #20: temp = 0.000000, timing cost = 930, wirelen = 5985
+Info:   at iteration #20: temp = 0.000000, timing cost = 928, wirelen = 5987 
+Info: SA placement time 0.65s
+
+Info: Max frequency for clock 'clk': 20.87 MHz (PASS at 20.00 MHz)
+
+Info: Max delay <async>     -> posedge clk: 28.79 ns
+Info: Max delay posedge clk -> <async>    : 16.91 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 3 endpoint(s)
+Info:          + represents [1,3) endpoint(s)
+Info: [  2094,   4291) |***********+
+Info: [  4291,   6488) |********************************+
+Info: [  6488,   8685) |****+
+Info: [  8685,  10882) |*************+
+Info: [ 10882,  13079) |********* 
+Info: [ 13079,  15276) |**+
+Info: [ 15276,  17473) |****+
+Info: [ 17473,  19670) |*************** 
+Info: [ 19670,  21867) |*****+
+Info: [ 21867,  24064) |***********+
+Info: [ 24064,  26261) |*************+
+Info: [ 26261,  28458) |******+
+Info: [ 28458,  30655) |******************************************+
+Info: [ 30655,  32852) |**********************************+
+Info: [ 32852,  35049) |******************************************************** 
+Info: [ 35049,  37246) |*********************************************+
+Info: [ 37246,  39443) |********************************+
+Info: [ 39443,  41640) |**********************+
+Info: [ 41640,  43837) |************************* 
+Info: [ 43837,  46034) |************************************************************ 
+Info: Checksum: 0xb37b90e2
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 4253 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |       54        945 |   54   945 |      3334|       2.60       2.60|
+Info:       2000 |      165       1834 |  111   889 |      2514|       0.38       2.98|
+Info:       3000 |      467       2532 |  302   698 |      1976|       0.24       3.22|
+Info:       4000 |      870       3129 |  403   597 |      1556|       0.35       3.57|
+Info:       5000 |     1355       3644 |  485   515 |      1214|       0.38       3.94|
+Info:       6000 |     1779       4220 |  424   576 |       904|       0.39       4.33|
+Info:       7000 |     2164       4835 |  385   615 |       483|       0.37       4.70|
+Info:       8000 |     2643       5356 |  479   521 |       287|       0.40       5.10|
+Info:       8613 |     2859       5754 |  216   398 |         0|       0.27       5.37|
+Info: Routing complete.
+Info: Router1 time 5.37s
+Info: Checksum: 0x8653d330
+
+Info: Critical path report for clock 'clk' (posedge -> posedge):
+Info: curr total
+Info:  1.4  1.4  Source processor.instr_SB_DFFE_Q_28_DFFLC.O
+Info:  1.8  3.2    Net processor.instr[2] budget 0.000000 ns (12,16) -> (11,17)
+Info:                Sink processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2  4.4  Source processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_LUT4_O_LC.O
+Info:  1.8  6.1    Net processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3[2] budget 0.000000 ns (11,17) -> (11,18)
+Info:                Sink processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_LUT4_I2_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2  7.3  Source processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_LUT4_I2_LC.O
+Info:  1.8  9.1    Net processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_LUT4_I2_O[2] budget 0.000000 ns (11,18) -> (12,19)
+Info:                Sink processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_LUT4_I2_O_SB_LUT4_I3_30_LC.I3
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.9 10.0  Source processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_LUT4_I2_O_SB_LUT4_I3_30_LC.O
+Info:  1.8 11.7    Net processor.state_SB_DFFSR_Q_D_SB_LUT4_O_I0_SB_LUT4_O_I3_SB_LUT4_I2_O_SB_LUT4_I3_O[0] budget 0.000000 ns (12,19) -> (13,20)
+Info:                Sink processor.aluMinus_SB_LUT4_O_I3_SB_CARRY_CO_31$CARRY.I2
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:31.22-31.23
+Info:  0.6 12.3  Source processor.aluMinus_SB_LUT4_O_I3_SB_CARRY_CO_31$CARRY.COUT
+Info:  0.0 12.3    Net processor.aluMinus_SB_LUT4_O_I3[1] budget 0.000000 ns (13,20) -> (13,20)
+Info:                Sink processor.aluMinus_SB_LUT4_O_20_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 12.6  Source processor.aluMinus_SB_LUT4_O_20_LC.COUT
+Info:  0.0 12.6    Net processor.aluMinus_SB_LUT4_O_I3[2] budget 0.000000 ns (13,20) -> (13,20)
+Info:                Sink processor.aluMinus_SB_LUT4_O_9_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 12.9  Source processor.aluMinus_SB_LUT4_O_9_LC.COUT
+Info:  0.0 12.9    Net processor.aluMinus_SB_LUT4_O_I3[3] budget 0.000000 ns (13,20) -> (13,20)
+Info:                Sink processor.aluMinus_SB_LUT4_O_6_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 13.2  Source processor.aluMinus_SB_LUT4_O_6_LC.COUT
+Info:  0.0 13.2    Net processor.aluMinus_SB_LUT4_O_I3[4] budget 0.000000 ns (13,20) -> (13,20)
+Info:                Sink processor.aluMinus_SB_LUT4_O_5_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 13.4  Source processor.aluMinus_SB_LUT4_O_5_LC.COUT
+Info:  0.0 13.4    Net processor.aluMinus_SB_LUT4_O_I3[5] budget 0.000000 ns (13,20) -> (13,20)
+Info:                Sink processor.aluMinus_SB_LUT4_O_4_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 13.7  Source processor.aluMinus_SB_LUT4_O_4_LC.COUT
+Info:  0.0 13.7    Net processor.aluMinus_SB_LUT4_O_I3[6] budget 0.000000 ns (13,20) -> (13,20)
+Info:                Sink processor.aluMinus_SB_LUT4_O_3_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 14.0  Source processor.aluMinus_SB_LUT4_O_3_LC.COUT
+Info:  0.0 14.0    Net processor.aluMinus_SB_LUT4_O_I3[7] budget 0.000000 ns (13,20) -> (13,20)
+Info:                Sink processor.aluMinus_SB_LUT4_O_2_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 14.3  Source processor.aluMinus_SB_LUT4_O_2_LC.COUT
+Info:  0.6 14.8    Net processor.aluMinus_SB_LUT4_O_I3[8] budget 0.560000 ns (13,20) -> (13,21)
+Info:                Sink processor.aluMinus_SB_LUT4_O_1_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 15.1  Source processor.aluMinus_SB_LUT4_O_1_LC.COUT
+Info:  0.0 15.1    Net processor.aluMinus_SB_LUT4_O_I3[9] budget 0.000000 ns (13,21) -> (13,21)
+Info:                Sink processor.aluMinus_SB_LUT4_O_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 15.4  Source processor.aluMinus_SB_LUT4_O_LC.COUT
+Info:  0.0 15.4    Net processor.aluMinus_SB_LUT4_O_I3[10] budget 0.000000 ns (13,21) -> (13,21)
+Info:                Sink processor.aluMinus_SB_LUT4_O_30_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 15.7  Source processor.aluMinus_SB_LUT4_O_30_LC.COUT
+Info:  0.0 15.7    Net processor.aluMinus_SB_LUT4_O_I3[11] budget 0.000000 ns (13,21) -> (13,21)
+Info:                Sink processor.aluMinus_SB_LUT4_O_29_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 15.9  Source processor.aluMinus_SB_LUT4_O_29_LC.COUT
+Info:  0.0 15.9    Net processor.aluMinus_SB_LUT4_O_I3[12] budget 0.000000 ns (13,21) -> (13,21)
+Info:                Sink processor.aluMinus_SB_LUT4_O_28_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 16.2  Source processor.aluMinus_SB_LUT4_O_28_LC.COUT
+Info:  0.0 16.2    Net processor.aluMinus_SB_LUT4_O_I3[13] budget 0.000000 ns (13,21) -> (13,21)
+Info:                Sink processor.aluMinus_SB_LUT4_O_27_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 16.5  Source processor.aluMinus_SB_LUT4_O_27_LC.COUT
+Info:  0.0 16.5    Net processor.aluMinus_SB_LUT4_O_I3[14] budget 0.000000 ns (13,21) -> (13,21)
+Info:                Sink processor.aluMinus_SB_LUT4_O_26_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 16.8  Source processor.aluMinus_SB_LUT4_O_26_LC.COUT
+Info:  0.0 16.8    Net processor.aluMinus_SB_LUT4_O_I3[15] budget 0.000000 ns (13,21) -> (13,21)
+Info:                Sink processor.aluMinus_SB_LUT4_O_25_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 17.1  Source processor.aluMinus_SB_LUT4_O_25_LC.COUT
+Info:  0.6 17.6    Net processor.aluMinus_SB_LUT4_O_I3[16] budget 0.560000 ns (13,21) -> (13,22)
+Info:                Sink processor.aluMinus_SB_LUT4_O_24_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 17.9  Source processor.aluMinus_SB_LUT4_O_24_LC.COUT
+Info:  0.0 17.9    Net processor.aluMinus_SB_LUT4_O_I3[17] budget 0.000000 ns (13,22) -> (13,22)
+Info:                Sink processor.aluMinus_SB_LUT4_O_23_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 18.2  Source processor.aluMinus_SB_LUT4_O_23_LC.COUT
+Info:  0.0 18.2    Net processor.aluMinus_SB_LUT4_O_I3[18] budget 0.000000 ns (13,22) -> (13,22)
+Info:                Sink processor.aluMinus_SB_LUT4_O_22_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 18.4  Source processor.aluMinus_SB_LUT4_O_22_LC.COUT
+Info:  0.0 18.4    Net processor.aluMinus_SB_LUT4_O_I3[19] budget 0.000000 ns (13,22) -> (13,22)
+Info:                Sink processor.aluMinus_SB_LUT4_O_21_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 18.7  Source processor.aluMinus_SB_LUT4_O_21_LC.COUT
+Info:  0.0 18.7    Net processor.aluMinus_SB_LUT4_O_I3[20] budget 0.000000 ns (13,22) -> (13,22)
+Info:                Sink processor.aluMinus_SB_LUT4_O_19_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 19.0  Source processor.aluMinus_SB_LUT4_O_19_LC.COUT
+Info:  0.0 19.0    Net processor.aluMinus_SB_LUT4_O_I3[21] budget 0.000000 ns (13,22) -> (13,22)
+Info:                Sink processor.aluMinus_SB_LUT4_O_18_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 19.3  Source processor.aluMinus_SB_LUT4_O_18_LC.COUT
+Info:  0.0 19.3    Net processor.aluMinus_SB_LUT4_O_I3[22] budget 0.000000 ns (13,22) -> (13,22)
+Info:                Sink processor.aluMinus_SB_LUT4_O_17_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 19.6  Source processor.aluMinus_SB_LUT4_O_17_LC.COUT
+Info:  0.0 19.6    Net processor.aluMinus_SB_LUT4_O_I3[23] budget 0.000000 ns (13,22) -> (13,22)
+Info:                Sink processor.aluMinus_SB_LUT4_O_16_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 19.8  Source processor.aluMinus_SB_LUT4_O_16_LC.COUT
+Info:  0.6 20.4    Net processor.aluMinus_SB_LUT4_O_I3[24] budget 0.560000 ns (13,22) -> (13,23)
+Info:                Sink processor.aluMinus_SB_LUT4_O_15_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 20.7  Source processor.aluMinus_SB_LUT4_O_15_LC.COUT
+Info:  0.0 20.7    Net processor.aluMinus_SB_LUT4_O_I3[25] budget 0.000000 ns (13,23) -> (13,23)
+Info:                Sink processor.aluMinus_SB_LUT4_O_14_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 20.9  Source processor.aluMinus_SB_LUT4_O_14_LC.COUT
+Info:  0.0 20.9    Net processor.aluMinus_SB_LUT4_O_I3[26] budget 0.000000 ns (13,23) -> (13,23)
+Info:                Sink processor.aluMinus_SB_LUT4_O_13_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 21.2  Source processor.aluMinus_SB_LUT4_O_13_LC.COUT
+Info:  0.0 21.2    Net processor.aluMinus_SB_LUT4_O_I3[27] budget 0.000000 ns (13,23) -> (13,23)
+Info:                Sink processor.aluMinus_SB_LUT4_O_12_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 21.5  Source processor.aluMinus_SB_LUT4_O_12_LC.COUT
+Info:  0.0 21.5    Net processor.aluMinus_SB_LUT4_O_I3[28] budget 0.000000 ns (13,23) -> (13,23)
+Info:                Sink processor.aluMinus_SB_LUT4_O_11_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 21.8  Source processor.aluMinus_SB_LUT4_O_11_LC.COUT
+Info:  0.0 21.8    Net processor.aluMinus_SB_LUT4_O_I3[29] budget 0.000000 ns (13,23) -> (13,23)
+Info:                Sink processor.aluMinus_SB_LUT4_O_10_LC.CIN
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.3 22.1  Source processor.aluMinus_SB_LUT4_O_10_LC.COUT
+Info:  0.7 22.7    Net processor.aluMinus_SB_LUT4_O_I3[30] budget 0.660000 ns (13,23) -> (13,23)
+Info:                Sink processor.aluMinus_SB_LUT4_O_8_LC.I3
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.27-142.66
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/arith_map.v:51.21-51.22
+Info:  0.9 23.6  Source processor.aluMinus_SB_LUT4_O_8_LC.O
+Info:  1.8 25.4    Net processor.aluMinus[30] budget 1.320000 ns (13,23) -> (13,24)
+Info:                Sink processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_LUT4_O_1_LC.I2
+Info:                Defined in:
+Info:                  top.v:57.13-67.4
+Info:                  femtorv32_quark.v:142.16-142.24
+Info:  1.2 26.6  Source processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_1_I0_SB_LUT4_O_1_LC.O
+Info:  1.8 28.3    Net processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_1_I0[2] budget 1.140000 ns (13,24) -> (13,24)
+Info:                Sink processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_1_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 29.5  Source processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3_SB_LUT4_O_I2_SB_LUT4_O_1_LC.O
+Info:  1.8 31.3    Net processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3_SB_LUT4_O_I2[2] budget 0.922000 ns (13,24) -> (12,24)
+Info:                Sink processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 32.5  Source processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3_SB_LUT4_O_LC.O
+Info:  1.8 34.3    Net processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_I3[3] budget 1.173000 ns (12,24) -> (12,25)
+Info:                Sink processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_LC.I3
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.9 35.1  Source processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0_SB_LUT4_O_1_LC.O
+Info:  3.5 38.6    Net processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_I0[3] budget 1.305000 ns (12,25) -> (8,27)
+Info:                Sink processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_LC.I3
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  0.9 39.5  Source processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_LC.O
+Info:  3.0 42.4    Net processor.writeBackData_SB_LUT4_O_9_I1_SB_LUT4_O_1_I1_SB_LUT4_O_2_I2_SB_LUT4_I2_O[0] budget 2.073000 ns (8,27) -> (5,26)
+Info:                Sink processor.PC_SB_DFFESR_Q_30_E_SB_LUT4_O_I1_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 43.7  Source processor.PC_SB_DFFESR_Q_30_E_SB_LUT4_O_I1_SB_LUT4_O_LC.O
+Info:  1.8 45.4    Net processor.PC_SB_DFFESR_Q_30_E_SB_LUT4_O_I1[0] budget 0.923000 ns (5,26) -> (5,26)
+Info:                Sink processor.PC_SB_DFFESR_Q_30_E_SB_LUT4_O_LC.I1
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 46.6  Source processor.PC_SB_DFFESR_Q_30_E_SB_LUT4_O_LC.O
+Info:  3.0 49.6    Net processor.PC_SB_DFFESR_Q_30_E budget 1.243000 ns (5,26) -> (5,25)
+Info:                Sink processor.PC_SB_DFFESR_Q_30_D_SB_LUT4_O_LC.CEN
+Info:  0.1 49.7  Setup processor.PC_SB_DFFESR_Q_30_D_SB_LUT4_O_LC.CEN
+Info: 22.1 ns logic, 27.6 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge clk':
+Info: curr total
+Info:  0.0  0.0  Source BTN_N$sb_io.D_IN_0
+Info:  8.7  8.7    Net BTN_N$SB_IO_IN budget 11.476000 ns (16,0) -> (1,30)
+Info:                Sink my_pll.locked_SB_LUT4_I3_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2  9.9  Source my_pll.locked_SB_LUT4_I3_LC.O
+Info:  4.8 14.7    Net my_pll.locked_SB_LUT4_I3_O[0] budget 8.572000 ns (1,30) -> (7,21)
+Info:                Sink processor.state_SB_LUT4_I3_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 15.9  Source processor.state_SB_LUT4_I3_LC.O
+Info:  5.5 21.5    Net processor.state_SB_LUT4_I3_O budget 9.518000 ns (7,21) -> (12,0)
+Info:                Sink $gbuf_processor.state_SB_LUT4_I3_O_$glb_ce.USER_SIGNAL_TO_GLOBAL_BUFFER
+Info:  1.6 23.0  Source $gbuf_processor.state_SB_LUT4_I3_O_$glb_ce.GLOBAL_BUFFER_OUTPUT
+Info:  0.7 23.7    Net processor.state_SB_LUT4_I3_O_$glb_ce budget 10.235000 ns (12,0) -> (10,20)
+Info:                Sink processor.instr_SB_DFFE_Q_DFFLC.CEN
+Info:  0.1 23.8  Setup processor.instr_SB_DFFE_Q_DFFLC.CEN
+Info: 4.1 ns logic, 19.7 ns routing
+
+Info: Critical path report for cross-domain path 'posedge clk' -> '<async>':
+Info: curr total
+Info:  1.4  1.4  Source uart_unit.uart_transmitter_u1.data_SB_DFFESR_Q_3_D_SB_LUT4_O_LC.O
+Info:  1.8  3.2    Net uart_unit.uart_transmitter_u1.data[6] budget 7.843000 ns (4,16) -> (4,16)
+Info:                Sink TX_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_1_LC.I0
+Info:                Defined in:
+Info:                  top.v:92.12-108.5
+Info:                  uart_tx.v:33.19-33.23
+Info:                  uart_ip.v:59.13-68.6
+Info:  1.3  4.4  Source TX_SB_LUT4_O_I2_SB_LUT4_O_I2_SB_LUT4_O_1_LC.O
+Info:  2.4  6.8    Net TX_SB_LUT4_O_I2_SB_LUT4_O_I2[2] budget 7.921000 ns (4,16) -> (5,13)
+Info:                Sink TX_SB_LUT4_O_I2_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2  8.0  Source TX_SB_LUT4_O_I2_SB_LUT4_O_LC.O
+Info:  1.8  9.8    Net TX_SB_LUT4_O_I2[0] budget 9.732000 ns (5,13) -> (5,13)
+Info:                Sink TX_SB_LUT4_O_LC.I2
+Info:                Defined in:
+Info:                  /home/brandon/zerotoasic/fomu-toolchain-Linux/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:  1.2 11.0  Source TX_SB_LUT4_O_LC.O
+Info:  5.7 16.7    Net TX$SB_IO_OUT budget 11.229000 ns (5,13) -> (15,0)
+Info:                Sink TX$sb_io.D_OUT_0
+Info:                Defined in:
+Info:                  top.v:92.12-108.5
+Info:                  uart_tx.v:20.21-20.30
+Info:                  uart_ip.v:59.13-68.6
+Info: 5.1 ns logic, 11.6 ns routing
+
+Info: Max frequency for clock 'clk': 20.11 MHz (PASS at 20.00 MHz)
+
+Info: Max delay <async>     -> posedge clk: 23.84 ns
+Info: Max delay posedge clk -> <async>    : 16.73 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 3 endpoint(s)
+Info:          + represents [1,3) endpoint(s)
+Info: [   265,   2554) |+
+Info: [  2554,   4843) |*************************+
+Info: [  4843,   7132) |**************+
+Info: [  7132,   9421) |**************+
+Info: [  9421,  11710) |*+
+Info: [ 11710,  13999) |*+
+Info: [ 13999,  16288) |*****+
+Info: [ 16288,  18577) |***********+
+Info: [ 18577,  20866) |**+
+Info: [ 20866,  23155) |*+
+Info: [ 23155,  25444) |*+
+Info: [ 25444,  27733) |*****************+
+Info: [ 27733,  30022) |**********+
+Info: [ 30022,  32311) |************************+
+Info: [ 32311,  34600) |************************************************************ 
+Info: [ 34600,  36889) |*****************************+
+Info: [ 36889,  39178) |*****************+
+Info: [ 39178,  41467) |*************************+
+Info: [ 41467,  43756) |************************************+
+Info: [ 43756,  46045) |***********************************************+

@@ -1,0 +1,4 @@
+set_io CLK 35
+set_io BTN_N 10
+set_io LED1 26
+
