@@ -1,5 +1,4 @@
 # RISC-V SoC
-<<<<<<< HEAD
 
 This project incorporates a RISC-V processor, a memory module, a UART IP, and various registers, among other modules. The purpose is to showcase the embedding process of a software program into a RISC-V architecture processor, to observe how memory interacts with the system on chip (SoC). To do so, a hexadecimal file is generated from simple C and Assembly programs. Finally, the design is simulated using open source tools, and tested into an iCEBreaker V1.0e FPGA.
 
@@ -68,5 +67,3 @@ The process of testing the design on an FPGA consists of:
 
 The "fpga" directory contains its own Makefile that automates the synthesis process to program the design on an icebreaker FPGA.
 
-=======
->>>>>>> 2142a82ee35116e9b309c3cb73252eabc4c7ff6e
