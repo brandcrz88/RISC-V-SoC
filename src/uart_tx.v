@@ -9,7 +9,7 @@
 
 module uart_tx
   #(
-    parameter clk_freq_hz = 30 * 1000000, // 100 MHz
+    parameter clk_freq_hz = 100 * 1000000, // 100 MHz
     parameter baud_rate = 115200)
   (
    input wire 	    i_clk,

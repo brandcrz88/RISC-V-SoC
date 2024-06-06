@@ -6,8 +6,8 @@ reg reset_n;
 
  
 top dut(
-    .BTN_N (reset_n),
-    .CLK (clk)
+    .reset_n (reset_n),
+    .clk (clk)
 );
 
 localparam CLK_PERIOD = 10;
