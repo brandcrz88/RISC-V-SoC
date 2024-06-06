@@ -1,1 +1,1 @@
-# RISC-V-SoC
+# RISC-V SoC
